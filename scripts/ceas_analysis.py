@@ -78,7 +78,7 @@ def has_misspellings(body):
     words = clean_text_for_spellcheck(body)
     filtered = [word for word in words if word not in CUSTOM_ALLOWLIST]
     misspelled = list(spell.unknown(filtered))
-    return len(misspelled) >= 10, misspelled  # Threshold: 3 or more misspelled words
+    return len(misspelled) >= 10, misspelled  
 
 # Check if body is short
 def short_body(body):
@@ -96,7 +96,7 @@ data['too_many_symbols'] = data['body'].apply(too_many_symbols)
 data[['body_misspellings', 'misspelled_words']] = data['body'].apply(lambda x: pd.Series(has_misspellings(x)))
 data['short_body'] = data['body'].apply(short_body)
 
-# Simple rule-based phishing score (0-4)
+# Simple rule-based phishing score (0-8)
 data['phishing_score'] = data[['sender_receiver_mismatch', 'suspicious_subject', 'has_url', 'free_email_provider', 'body_has_shortened_url', 'too_many_symbols', 'body_misspellings', 'short_body']].sum(axis=1)
 
 # Count score distribution by label
