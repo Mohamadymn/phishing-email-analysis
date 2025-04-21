@@ -1,0 +1,56 @@
+Phishing Score Distribution by Label
+======================================
+phishing_score    0     1      2     3     4    5   6
+label                                                
+0               186  3744   6400  4214  2379  378  11
+1                20  5463  10838  2484  2073  964   0
+
+Rule Hit Counts by Label (1 = matched)
+========================================
+       sender_receiver_mismatch  suspicious_subject  has_url  free_email_provider  body_has_shortened_url  too_many_symbols  body_misspellings  short_body
+label                                                                                                                                                     
+0                         15570                 541    11343                   13                    1002              3769               8414           6
+1                         20383                5048    14889                    6                    1260              3101               2983          33
+ Top Phishing Misspellings: 
+==========================================
+lllp       2930
+womans     1004
+ladens     987
+reallife   987
+obamas     987
+wynter     987
+clintons   987
+clampett   987
+garrs      987
+kareen     987
+
+ Top Normal Misspellings: 
+==========================================
+usergvcceaschallengecc 661
+rossum     618
+sha        600
+spamassassin 588
+opensuse   559
+suse       531
+gnupg      502
+andor      444
+pythonwin  402
+charsetiso 388
+
+ Top Shortened URLs in Phishing Emails
+=============================================
+http://fetessteersit.com/ 188
+http://dearbright.com/ 178
+http://pillmust.com/ 117
+http://www.fiftywait.com/ 100
+http://motivationflat.com 94
+http://www.feelwait.com/ 90
+http://ollassabbet.com/ 77
+http://scorewait.com/ 58
+http://responsibilityport.com 34
+http://ingenuityseat.com 20
+http://www.madebright.com 19
+http://www.risepat.com/ 16
+http://www.grayhot.com/ 15
+http://www.makepat.com/ 15
+http://daywait.com 13
