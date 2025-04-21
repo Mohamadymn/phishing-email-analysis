@@ -1,0 +1,5 @@
+# Ignore large dataset files
+data/phishing_emails.csv
+data/CEAS_08.csv
+data/CEAS_08_cleaned.csv
+reports/ceas_header_analysis.csv
