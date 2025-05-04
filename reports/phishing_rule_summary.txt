@@ -1,31 +1,28 @@
 Phishing Score Distribution by Label
-======================================
-phishing_score    0     1      2     3     4    5   6
-label                                                
-0               186  3744   6400  4214  2379  378  11
-1                20  5463  10838  2484  2073  964   0
+phishing_score    0     1      2     3     4    5
+label                                            
+0               174  3425   4218  5936  3403  156
+1                18  5568  11578  1715  1999  964
 
-Rule Hit Counts by Label (1 = matched)
-========================================
-       sender_receiver_mismatch  suspicious_subject  has_url  free_email_provider  body_has_shortened_url  too_many_symbols  body_misspellings  short_body
-label                                                                                                                                                     
-0                         15570                 541    11343                   13                    1002              3769               8414           6
-1                         20383                5048    14889                    6                    1260              3101               2983          33
- Top Phishing Misspellings: 
-==========================================
+Rule Hit Counts by Label
+       sender_receiver_mismatch  suspicious_subject  has_url  free_email_provider  too_many_symbols  body_misspellings  short_body
+label                                                                                                                             
+0                         15570                 541    11343                   13              8174               8414           6
+1                         20383                5048    14889                    6              3343               2983          33
+
+Top Phishing Misspellings:
 lllp       2930
 womans     1004
-ladens     987
 reallife   987
-obamas     987
 wynter     987
-clintons   987
-clampett   987
 garrs      987
+ladens     987
+obamas     987
+clintons   987
 kareen     987
+clampett   987
 
- Top Normal Misspellings: 
-==========================================
+Top Normal Misspellings:
 usergvcceaschallengecc 661
 rossum     618
 sha        600
@@ -37,20 +34,24 @@ andor      444
 pythonwin  402
 charsetiso 388
 
- Top Shortened URLs in Phishing Emails
-=============================================
-http://fetessteersit.com/ 188
-http://dearbright.com/ 178
-http://pillmust.com/ 117
-http://www.fiftywait.com/ 100
-http://motivationflat.com 94
-http://www.feelwait.com/ 90
-http://ollassabbet.com/ 77
-http://scorewait.com/ 58
-http://responsibilityport.com 34
-http://ingenuityseat.com 20
-http://www.madebright.com 19
-http://www.risepat.com/ 16
-http://www.grayhot.com/ 15
-http://www.makepat.com/ 15
-http://daywait.com 13
+Top URL Domains in Phishing Emails
+www.cnn.com               67390
+cgi.cnn.com               2930
+www.opera.com             261
+milddear.com              190
+flapprice.com             188
+fetessteersit.com         188
+dearcan.com               186
+whitedone.com             183
+dearbright.com            178
+placefall.com             171
+fundspampasau.com         160
+asterduskyhah.com         158
+dryadsnedsjaw.com         157
+wearplaces.com            154
+navesbaconzek.com         154
+nievetubaelay.com         148
+provejobrun.com           143
+zoomwill.com              131
+zoomhigh.com              129
+jumpwill.com              128

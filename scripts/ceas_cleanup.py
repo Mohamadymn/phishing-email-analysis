@@ -1,14 +1,10 @@
 import pandas as pd
 import re
+import argparse
 
-# Load dataset
-data = pd.read_csv('data/CEAS_08.csv')
-
-# Parse function
-def extract_name_email(full_info):
+def extract_name_email(full_info: str) -> tuple[str, str]:
     if pd.isna(full_info):
         return "John Doe", "unknown@example.com"
-    
     match = re.match(r'(.*)<(.+?)>', full_info)
     if match:
         name = match.group(1).strip().strip('"') or "John Doe"
@@ -16,17 +12,18 @@ def extract_name_email(full_info):
     else:
         name = "John Doe"
         email = full_info.strip()
-    
     return name, email
 
-# Apply to sender
-data[['sender_name', 'sender_email']] = data['sender'].apply(
-    lambda x: pd.Series(extract_name_email(x)))
+def clean_dataset(input_path: str, output_path: str) -> None:
+    df = pd.read_csv(input_path)
+    df[['sender_name', 'sender_email']] = df['sender'].apply(lambda x: pd.Series(extract_name_email(x)))
+    df[['receiver_name', 'receiver_email']] = df['receiver'].apply(lambda x: pd.Series(extract_name_email(x)))
+    df.to_csv(output_path, index=False)
+    print(f"Cleaned data saved to {output_path}")
 
-# Apply to recipient
-data[['receiver_name', 'receiver_email']] = data['receiver'].apply(
-    lambda x: pd.Series(extract_name_email(x)))
-
-# Save cleaned file
-data.to_csv('data/CEAS_08_cleaned.csv', index=False)
-print("Cleaned sender/recipient info saved to data/CEAS_08_cleaned.csv")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Clean sender/receiver fields in CEAS data.")
+    parser.add_argument("--input", type=str, default="data/CEAS_08.csv", help="Input CSV path")
+    parser.add_argument("--output", type=str, default="data/CEAS_08_cleaned.csv", help="Output CSV path")
+    args = parser.parse_args()
+    clean_dataset(args.input, args.output)
