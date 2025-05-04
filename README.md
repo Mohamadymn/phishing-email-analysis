@@ -2,14 +2,13 @@
 
 This project focuses on identifying phishing emails using two approaches:
 
-1. **Rule-Based Detection** — Based on email headers, content patterns, and common phishing tactics  
-2. **NLP-Based Detection** *(in progress)* — Uses natural language processing and machine learning to classify phishing content based on email text
+**Rule-Based Detection** — Based on email headers, content patterns, and common phishing tactics  
 
 ## Project Structure
-data/ # Dataset files (excluded from GitHub, see download link)
-scripts/ # Rule-based detection, NLP modeling (next) 
-reports/ # Analysis summaries, result logs 
-README.md
+- data/ # Dataset files (excluded from GitHub, see download link)
+- scripts/ # Rule-based detection 
+- reports/ # Analysis summaries, result logs 
+- README.md
 
 ---
 
@@ -21,10 +20,9 @@ README.md
 | `suspicious_subject` | Subject has phishing keywords (e.g. "verify", "account", "click") |
 | `has_url` | Email contains one or more URLs |
 | `free_email_provider` | Sender uses free domain (e.g., Gmail, Yahoo) |
-| `body_has_shortened_url` | Includes URLs from shortening services like `bit.ly` |
-| `too_many_symbols` | Excessive use of special characters (e.g. `!!!!`, `$$$`) |
+| `too_many_symbols` | Excessive use of repeated special characters (e.g. `!!!!`, `======`) |
 | `body_misspellings` | Contains 10 or more misspelled words (validated by spellchecker) |
-| `short_body` | Email body is less than 30 characters |
+| `short_body` | Email body is very short |
 
 Each email is assigned a **phishing score** based on how many of these flags it matches.
 
@@ -59,5 +57,6 @@ The **CEAS 2008 phishing email dataset** was used, which contains labeled phishi
 - `re` for email and URL parsing
 - `pyspellchecker` for dictionary-based spell checking
 - `Counter` for frequency analysis
+- 'urlparse' for URL checking
 
 ---
