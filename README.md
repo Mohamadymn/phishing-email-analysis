@@ -6,8 +6,9 @@ This project focuses on identifying phishing emails using two approaches:
 
 ## Project Structure
 - data/ # Dataset files (excluded from GitHub, see download link)
+- reports/ # Analysis summaries, result logs
+- rules/ # Rule engine
 - scripts/ # Rule-based detection 
-- reports/ # Analysis summaries, result logs 
 - README.md
 
 ---
